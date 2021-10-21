@@ -6,7 +6,7 @@
   "scripts": {
     "migrate": "npx knex migrate:latest --knexfile db/knexfile.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,8 @@
     "knex": "^0.95.11",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }

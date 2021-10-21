@@ -1,0 +1,89 @@
+/**
+ * @swagger
+ * /user:
+ *   post:
+ *     summary: Create a new user
+ *     tags: [createUser]
+ *     requestBody:
+ *       required: true
+ *       content: 
+ *         applicattion/json:
+ *           schema:
+ *             $ref: '#/components/schemas/users'
+ *     responses:
+ *       200:
+ *         description: The user is created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/users'
+ *       500:
+ *         description:  some server error
+ *     
+ */
+
+
+
+ /**
+ * @swagger
+ * /user/{id}:
+ * put:
+ *   summary: Update the existing user
+ *   tags: [updateUser]
+ *   parameter:
+ *     - in: path
+ *       name: id
+ *       schema:
+ *         type: string
+ *       required: true
+ *       description: The user id
+ *   requestBody: 
+ *     required: true
+ *     content:
+ *       application/json:
+ *         schema:
+ *           $ref: '#/components/schema/users'
+ *   responses:
+ *     200:
+ *       description: The user is updated
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schema/users'
+ *     404:
+ *       description : The user not found
+ *     500:
+ *       description : Some error happened
+ */
+
+ /**
+ * @swagger
+ * /user/{id}:
+ *  put:
+ *    summary: Update the book by the id
+ *    tags: [updateUser]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        schema:
+ *          type: string
+ *        required: true
+ *        description: The user id
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/users'
+ *    responses:
+ *      200:
+ *        description: The book was updated
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/users'
+ *      404:
+ *        description: The user was not found
+ *      500:
+ *        description: Some error happened
+ */
