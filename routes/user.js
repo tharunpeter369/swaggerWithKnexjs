@@ -189,7 +189,12 @@ router.put('/:id',async(req,res)=>{
     console.log(req.params);
     try{
         const data = await db(table).where(req.params).update(req.body)
-        res.status(200).json(data)
+        console.log(data);
+        if(data == 1){
+            res.status(200).json(data+" user updated")
+        }else if(data == 0){
+            res.status(404).json(data=" user not found")
+        }
     }catch(err){
         res.status(500).send(err)
     }
@@ -222,7 +227,11 @@ router.put('/:id',async(req,res)=>{
 router.delete('/:id',async(req,res)=>{
     try{
         const data = await db(table).where(req.params).del()
-        res.status(200).json(data)
+        if(data==1){
+            res.status(200).json("usesr deleted") 
+        }else if(data==0){
+            res.status(404).json("user not not found") 
+        }
     }catch(err){
         res.status(400).json(err)
     }
